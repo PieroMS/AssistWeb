@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('assists', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('restrict');
+            $table->date('date');
+            $table->dateTime('entry_time')->nullable();
+            $table->dateTime('exit_time')->nullable();
+            $table->string('assist_type', 100);
+            $table->string('notas', 250);
+            $table->integer('work_hours');
             $table->timestamps();
         });
     }

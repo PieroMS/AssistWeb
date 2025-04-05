@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('lastname',50);
             $table->string('document_type',10);
             $table->string('document_number',11);
-            $table->datetimes('employment_date');
+            $table->dateTime('employment_date');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            //$table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('phone',15);
             $table->foreignId('rol_id')->constrained('rols')->onDelete('restrict');
